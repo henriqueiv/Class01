@@ -7,6 +7,7 @@
 //
 
 import XCTest
+@testable import Class01
 
 class Class01UITests: XCTestCase {
         
@@ -28,9 +29,18 @@ class Class01UITests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
+//    func testNumberOfRecordsAginstNumberOfCells() {
+//        // Use recording to get started writing UI tests.
+//        // Use XCTAssert and related functions to verify your tests produce the correct results.
+//        XCUIApplication().buttons["Login"].tap()
+//        
+//        APIManager.sharedInstance.login("ash", password: "mistyS2") { (success: Bool, errorMessage: String, trainer: Trainer?) in
+//            let trainerLocalDst:UnsafeMutablePointer<Trainer>
+//            
+//            memcpy(trainerLocalDst, trainer, sizeof(UnsafeMutablePointer<Trainer>))
+//            XCTAssertTrue(Int(XCUIApplication().tables.cells.count) == trainer!.onHandPokemons.count, "Number of rows in table view must match number of pokemons returned from ws.")
+//            
+//        }
+//    }
     
 }
