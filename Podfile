@@ -5,9 +5,8 @@ use_frameworks!
 target 'Class01' do
 	pod 'Alamofire', '~> 3.0'
 	pod 'SVProgressHUD'
-    pod 'AsyncImageView'
-    pod 'Gloss', '~> 0.7'
-    pod 'EVReflection', '~> 2.6'
+	pod 'AsyncImageView'
+	pod 'Gloss', '~> 0.7'
 end
 
 target 'Class01Tests' do

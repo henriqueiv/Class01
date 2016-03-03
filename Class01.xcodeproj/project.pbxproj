@@ -122,6 +122,8 @@
 		62F4FA351C87531800E8A0E1 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				62FB56331C84D3B500C65148 /* PokemonCell */,
+				62F4FA361C875A1600E8A0E1 /* SkillCell */,
 				62FB56001C84C66D00C65148 /* LaunchScreen.storyboard */,
 				62FB55FB1C84C66D00C65148 /* Main.storyboard */,
 			);
@@ -134,6 +136,15 @@
 				62F4FA371C875A3000E8A0E1 /* SkillCell.swift */,
 			);
 			name = SkillCell;
+			sourceTree = "<group>";
+		};
+		62F4FA391C88A0D700E8A0E1 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				62FB55FE1C84C66D00C65148 /* Assets.xcassets */,
+				62FB56031C84C66D00C65148 /* Info.plist */,
+			);
+			name = Utils;
 			sourceTree = "<group>";
 		};
 		62FB55EB1C84C66D00C65148 = {
@@ -161,15 +172,12 @@
 		62FB55F61C84C66D00C65148 /* Class01 */ = {
 			isa = PBXGroup;
 			children = (
-				62F4FA361C875A1600E8A0E1 /* SkillCell */,
 				62FB56271C84C8A000C65148 /* APIManager */,
 				62FB55F71C84C66D00C65148 /* AppDelegate.swift */,
-				62FB55FE1C84C66D00C65148 /* Assets.xcassets */,
-				62FB56031C84C66D00C65148 /* Info.plist */,
-				62F4FA351C87531800E8A0E1 /* View */,
 				62F4FA341C87528900E8A0E1 /* Controller */,
 				62FB562A1C84CA9400C65148 /* Model */,
-				62FB56331C84D3B500C65148 /* PokemonCell */,
+				62F4FA391C88A0D700E8A0E1 /* Utils */,
+				62F4FA351C87531800E8A0E1 /* View */,
 			);
 			path = Class01;
 			sourceTree = "<group>";
