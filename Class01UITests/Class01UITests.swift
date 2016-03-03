@@ -10,7 +10,9 @@ import XCTest
 @testable import Class01
 
 class Class01UITests: XCTestCase {
-        
+    
+    private let ConnectionTimeOutLimitInSeconds:NSTimeInterval = 5
+    
     override func setUp() {
         super.setUp()
         
@@ -20,7 +22,7 @@ class Class01UITests: XCTestCase {
         continueAfterFailure = false
         // UI tests must launch the application that they test. Doing this in setup will make sure it happens for each test method.
         XCUIApplication().launch()
-
+        
         // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
     }
     
@@ -29,18 +31,20 @@ class Class01UITests: XCTestCase {
         super.tearDown()
     }
     
-//    func testNumberOfRecordsAginstNumberOfCells() {
-//        // Use recording to get started writing UI tests.
-//        // Use XCTAssert and related functions to verify your tests produce the correct results.
-//        XCUIApplication().buttons["Login"].tap()
-//        
-//        APIManager.sharedInstance.login("ash", password: "mistyS2") { (success: Bool, errorMessage: String, trainer: Trainer?) in
-//            let trainerLocalDst:UnsafeMutablePointer<Trainer>
-//            
-//            memcpy(trainerLocalDst, trainer, sizeof(UnsafeMutablePointer<Trainer>))
-//            XCTAssertTrue(Int(XCUIApplication().tables.cells.count) == trainer!.onHandPokemons.count, "Number of rows in table view must match number of pokemons returned from ws.")
-//            
-//        }
-//    }
+    func testNumberOfRecordsAginstNumberOfCells() {
+        // Use recording to get started writing UI tests.
+        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        let expectation = expectationWithDescription("Loganu la nu servidor :D")
+        
+        XCUIApplication().buttons["Login"].tap()
+        expectation.fulfill()
+        waitForExpectationsWithTimeout(self.ConnectionTimeOutLimitInSeconds) { (error) in
+            if error != nil{
+                XCTFail("\(__FUNCTION__)::Timed out: \(error!)")
+            } else {
+                XCTAssertTrue(Int(XCUIApplication().tables.cells.count) == 6, "Number of rows in table view must match number of pokemons returned from ws.")
+            }
+        }
+    }
     
 }

@@ -71,12 +71,22 @@ class TrainerViewController: UIViewController {
         return .Slide
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "ShowPokemonDetail" {
+            let vc = segue.destinationViewController as! PokemonDetailViewController
+            vc.pokemon = sender as! Pokemon
+            self.showDetailViewController(vc, sender: nil)
+        }
+    }
+    
 }
 
 // MARK: - UITableViewDelegate
 extension TrainerViewController: UITableViewDelegate {
     
-    //
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        performSegueWithIdentifier("ShowPokemonDetail", sender: trainer.onHandPokemons[indexPath.row])
+    }
     
 }
 

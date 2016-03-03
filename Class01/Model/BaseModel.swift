@@ -19,16 +19,32 @@ class BaseModel: NSObject, Decodable {
                 break
             }
             
-            if property == "super" { continue }
+            let childReflected = Mirror(reflecting: child.value)
+            if childReflected.displayStyle == .Optional {
+                print("optional")
+                self.setValue((property <~~ json), forKey: property) // Here the error doesn't occurs
+            } else {
+                print("not optional")
+                self.setValue((property <~~ json)!, forKey: property) // Here the error doesn't occurs
+            }
             
-//            let value = (property <~~ json)!
-//            <self.valueForKey(property)!.dynamicType>
-            
-//            let type = self.valueForKey(property)!.dynamicType
-//            let a = (property <~~ json)! // Here de error occurs
-            
-            self.setValue((property <~~ json)!, forKey: property) // Here the error doesn't occurs
+//            if property == "super" { continue }
+//            
+//            //            let value = (property <~~ json)!
+//            //            <self.valueForKey(property)!.dynamicType>
+//            
+//            //            let type = self.valueForKey(property)!.dynamicType
+//            //            let a = (property <~~ json)! // Here de error occurs
+//            
+//            print("\(self.dynamicType).\(property)")
+//            if Mirror(reflecting: reflect(self.property)).displayStyle == .Optional {
+//                print("optional")
+//                self.setValue((property <~~ json), forKey: property) // Here the error doesn't occurs
+//            } else {
+//                print("not optional")
+//                self.setValue((property <~~ json)!, forKey: property) // Here the error doesn't occurs
+//            }
         }
     }
-
+    
 }

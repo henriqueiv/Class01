@@ -10,7 +10,9 @@ import XCTest
 @testable import Class01
 
 class LoginTests: XCTestCase {
-
+    
+    private let ConnectionTimeOutLimitInSeconds:NSTimeInterval = 5
+    
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -19,7 +21,7 @@ class LoginTests: XCTestCase {
     func testLoginTrue() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
-        let expectation = expectationWithDescription("Loganu la nu servidor :D")
+        let expectation = expectationWithDescription("Done")
         
         let user = "ash"
         let pwd = "mistyS2"
@@ -28,27 +30,22 @@ class LoginTests: XCTestCase {
             expectation.fulfill()
         }
         
-        waitForExpectationsWithTimeout(5.0, handler: nil)
-        waitForExpectationsWithTimeout(5.0) { (error) in
-            XCTFail("\(#function)::Timed out")
-        }
+        waitForExpectationsWithTimeout(self.ConnectionTimeOutLimitInSeconds, handler: nil)
     }
     
     func testLoginFalse() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
-        let expectation = expectationWithDescription("Loganu la nu servidor :D")
+        let expectation = expectationWithDescription("Done")
         
-        let user = "ash"
+        let user = "ash222"
         let pwd = "mistyS2"
         APIManager.sharedInstance.login(user, password: pwd) { (login:Bool, errorMessage:String, trainer:Trainer?) in
             XCTAssertFalse(login, "Right user or password. THIS SHOULD FAIL!")
             expectation.fulfill()
         }
         
-        waitForExpectationsWithTimeout(5.0) { (error) in
-            XCTFail("\(#function)::Timed out")
-        }
+        waitForExpectationsWithTimeout(self.ConnectionTimeOutLimitInSeconds, handler: nil)
     }
-
+    
 }

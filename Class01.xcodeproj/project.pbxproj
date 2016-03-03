@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		62AB89461C84E632002F7D84 /* LoginTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62AB89451C84E632002F7D84 /* LoginTests.swift */; };
 		62AB89481C84EE44002F7D84 /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62AB89471C84EE44002F7D84 /* BaseModel.swift */; };
+		62F4FA331C87527F00E8A0E1 /* PokemonDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F4FA321C87527F00E8A0E1 /* PokemonDetailViewController.swift */; };
+		62F4FA381C875A3000E8A0E1 /* SkillCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F4FA371C875A3000E8A0E1 /* SkillCell.swift */; };
 		62FB55F81C84C66D00C65148 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62FB55F71C84C66D00C65148 /* AppDelegate.swift */; };
 		62FB55FA1C84C66D00C65148 /* TrainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62FB55F91C84C66D00C65148 /* TrainerViewController.swift */; };
 		62FB55FD1C84C66D00C65148 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62FB55FB1C84C66D00C65148 /* Main.storyboard */; };
@@ -47,6 +49,8 @@
 		33EA0AB06E3B7BB73A1BDF78 /* Pods-Class01.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Class01.release.xcconfig"; path = "Pods/Target Support Files/Pods-Class01/Pods-Class01.release.xcconfig"; sourceTree = "<group>"; };
 		62AB89451C84E632002F7D84 /* LoginTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginTests.swift; sourceTree = "<group>"; };
 		62AB89471C84EE44002F7D84 /* BaseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
+		62F4FA321C87527F00E8A0E1 /* PokemonDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokemonDetailViewController.swift; sourceTree = "<group>"; };
+		62F4FA371C875A3000E8A0E1 /* SkillCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SkillCell.swift; path = SkillCell/SkillCell.swift; sourceTree = "<group>"; };
 		62FB55F41C84C66D00C65148 /* Class01.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Class01.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		62FB55F71C84C66D00C65148 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		62FB55F91C84C66D00C65148 /* TrainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainerViewController.swift; sourceTree = "<group>"; };
@@ -105,6 +109,33 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		62F4FA341C87528900E8A0E1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				62FB56251C84C89800C65148 /* LoginViewController.swift */,
+				62FB55F91C84C66D00C65148 /* TrainerViewController.swift */,
+				62F4FA321C87527F00E8A0E1 /* PokemonDetailViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		62F4FA351C87531800E8A0E1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				62FB56001C84C66D00C65148 /* LaunchScreen.storyboard */,
+				62FB55FB1C84C66D00C65148 /* Main.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		62F4FA361C875A1600E8A0E1 /* SkillCell */ = {
+			isa = PBXGroup;
+			children = (
+				62F4FA371C875A3000E8A0E1 /* SkillCell.swift */,
+			);
+			name = SkillCell;
+			sourceTree = "<group>";
+		};
 		62FB55EB1C84C66D00C65148 = {
 			isa = PBXGroup;
 			children = (
@@ -130,16 +161,15 @@
 		62FB55F61C84C66D00C65148 /* Class01 */ = {
 			isa = PBXGroup;
 			children = (
+				62F4FA361C875A1600E8A0E1 /* SkillCell */,
 				62FB56271C84C8A000C65148 /* APIManager */,
 				62FB55F71C84C66D00C65148 /* AppDelegate.swift */,
 				62FB55FE1C84C66D00C65148 /* Assets.xcassets */,
 				62FB56031C84C66D00C65148 /* Info.plist */,
-				62FB56001C84C66D00C65148 /* LaunchScreen.storyboard */,
-				62FB56251C84C89800C65148 /* LoginViewController.swift */,
-				62FB55FB1C84C66D00C65148 /* Main.storyboard */,
+				62F4FA351C87531800E8A0E1 /* View */,
+				62F4FA341C87528900E8A0E1 /* Controller */,
 				62FB562A1C84CA9400C65148 /* Model */,
 				62FB56331C84D3B500C65148 /* PokemonCell */,
-				62FB55F91C84C66D00C65148 /* TrainerViewController.swift */,
 			);
 			path = Class01;
 			sourceTree = "<group>";
@@ -271,6 +301,7 @@
 				TargetAttributes = {
 					62FB55F31C84C66D00C65148 = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = 8WCPHDZJPJ;
 					};
 					62FB56071C84C66D00C65148 = {
 						CreatedOnToolsVersion = 7.3;
@@ -383,9 +414,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				62FB56351C84D3E900C65148 /* PokemonTableViewCell.swift in Sources */,
+				62F4FA381C875A3000E8A0E1 /* SkillCell.swift in Sources */,
 				62FB56291C84C8A900C65148 /* APIManager.swift in Sources */,
 				62FB56261C84C89800C65148 /* LoginViewController.swift in Sources */,
 				62FB56301C84CB1700C65148 /* Status.swift in Sources */,
+				62F4FA331C87527F00E8A0E1 /* PokemonDetailViewController.swift in Sources */,
 				62AB89481C84EE44002F7D84 /* BaseModel.swift in Sources */,
 				62FB55FA1C84C66D00C65148 /* TrainerViewController.swift in Sources */,
 				62FB55F81C84C66D00C65148 /* AppDelegate.swift in Sources */,
@@ -537,7 +570,9 @@
 			baseConfigurationReference = AE44B3ABA5B888B39B541C81 /* Pods-Class01.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Class01/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = xyz.henriquevalcanaia.Class01;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -549,7 +584,9 @@
 			baseConfigurationReference = 33EA0AB06E3B7BB73A1BDF78 /* Pods-Class01.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Class01/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = xyz.henriquevalcanaia.Class01;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -561,6 +598,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = Class01Tests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = xyz.henriquevalcanaia.Class01Tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -573,6 +611,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = Class01Tests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = xyz.henriquevalcanaia.Class01Tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -584,6 +623,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				INFOPLIST_FILE = Class01UITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = xyz.henriquevalcanaia.Class01UITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -595,6 +635,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				INFOPLIST_FILE = Class01UITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = xyz.henriquevalcanaia.Class01UITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
