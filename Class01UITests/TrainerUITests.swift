@@ -1,15 +1,14 @@
 //
-//  Class01UITests.swift
-//  Class01UITests
+//  TrainerUITests.swift
+//  Class01
 //
-//  Created by Henrique Valcanaia on 2/29/16.
+//  Created by Henrique Valcanaia on 3/4/16.
 //  Copyright © 2016 Henrique Valcanaia. All rights reserved.
 //
 
 import XCTest
-@testable import Class01
 
-class Class01UITests: XCTestCase {
+class TrainerUITests: XCTestCase {
     
     private let ConnectionTimeOutLimitInSeconds:NSTimeInterval = 5
     
@@ -31,5 +30,19 @@ class Class01UITests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
-    
+
+    func testNumberOfPokemonsAginstNumberOfCells() {
+        let expectation = expectationWithDescription("Loganu la nu servidor :D")
+        
+        XCUIApplication().buttons["Login"].tap()
+        expectation.fulfill()
+        waitForExpectationsWithTimeout(self.ConnectionTimeOutLimitInSeconds) { (error) in
+            if error != nil {
+                XCTFail("Timed out: \(error!)")
+            } else {
+                XCTAssertTrue(Int(XCUIApplication().tables.cells.count) == 6, "Number of rows in table view must match number of pokemons returned from ws.")
+            }
+        }
+    }
+
 }

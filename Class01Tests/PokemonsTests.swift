@@ -1,15 +1,15 @@
 //
-//  TrainerTests.swift
+//  PokemonsTests.swift
 //  Class01
 //
-//  Created by Henrique Valcanaia on 3/3/16.
+//  Created by Henrique Valcanaia on 3/4/16.
 //  Copyright © 2016 Henrique Valcanaia. All rights reserved.
 //
 
 import XCTest
 @testable import Class01
 
-class TrainerTests: XCTestCase {
+class PokemonsTests: XCTestCase {
 
     override func setUp() {
         super.setUp()
@@ -21,23 +21,24 @@ class TrainerTests: XCTestCase {
         super.tearDown()
     }
 
-    func testTrainerDataFromWS() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        let expectation = expectationWithDescription("Login completed")
+    func testPokemonDataFromWS() {
+        let expectation = expectationWithDescription("Done")
         
         APIManager.sharedInstance.login("ash", password: "mistyS2") { (success, errorMessage, trainer) -> Void in
             expectation.fulfill()
             if success {
-                if let trainer = trainer {
-                    let validPokemonsCount = trainer.onHandPokemons.count == 6
-                    let validAge = trainer.age == 10
-                    let validName = trainer.name == "Ash Ketchum"
-                    XCTAssertTrue(validPokemonsCount && validAge && validName, "Invalid data!")
+                let validPokemonsCount = trainer!.onHandPokemons.count == 6
+                var validSkillsCount = false
+                for pokemon in trainer!.onHandPokemons {
+                    validSkillsCount = pokemon.skills.count == 4
+                    if !validSkillsCount {
+                        break
+                    }
                 }
-            
+                
+                XCTAssertTrue(validSkillsCount && validPokemonsCount, "Wrong data from WS!")
             } else {
-                XCTFail("Unable to login!")
+                XCTFail("Unable to login")
             }
         }
         

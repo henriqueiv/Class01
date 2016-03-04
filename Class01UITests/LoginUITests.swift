@@ -1,16 +1,15 @@
 //
-//  Class01UITests.swift
-//  Class01UITests
+//  LoginUITests.swift
+//  Class01
 //
-//  Created by Henrique Valcanaia on 2/29/16.
+//  Created by Henrique Valcanaia on 3/4/16.
 //  Copyright © 2016 Henrique Valcanaia. All rights reserved.
 //
 
 import XCTest
-@testable import Class01
 
-class Class01UITests: XCTestCase {
-    
+class LoginUITests: XCTestCase {
+
     private let ConnectionTimeOutLimitInSeconds:NSTimeInterval = 5
     
     override func setUp() {
@@ -32,4 +31,28 @@ class Class01UITests: XCTestCase {
         super.tearDown()
     }
     
+    func testLoginTrue() {
+        XCUIApplication().textFields["usernameTextField"].tap()
+        XCUIApplication().textFields["usernameTextField"].clearAndEnterText("ash")
+        
+        XCUIApplication().textFields["passwordTextField"].tap()
+        XCUIApplication().textFields["passwordTextField"].clearAndEnterText("mistyS2")
+        
+        XCUIApplication().buttons["Login"].tap()
+        
+        XCTAssertTrue(XCUIApplication().tables.count == 1, "")
+    }
+    
+    func testLoginFalse() {
+        XCUIApplication().textFields["usernameTextField"].tap()
+        XCUIApplication().textFields["usernameTextField"].clearAndEnterText("ash2")
+        
+        XCUIApplication().textFields["passwordTextField"].tap()
+        XCUIApplication().textFields["passwordTextField"].clearAndEnterText("mistyS3")
+        
+        XCUIApplication().buttons["Login"].tap()
+        
+        XCTAssertTrue(XCUIApplication().tables.count == 0, "")
+    }
+
 }
