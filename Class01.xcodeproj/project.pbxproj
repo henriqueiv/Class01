@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		628BBD381C88BBBD00F393D4 /* TrainerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628BBD371C88BBBD00F393D4 /* TrainerTests.swift */; };
 		62AB89461C84E632002F7D84 /* LoginTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62AB89451C84E632002F7D84 /* LoginTests.swift */; };
 		62AB89481C84EE44002F7D84 /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62AB89471C84EE44002F7D84 /* BaseModel.swift */; };
 		62F4FA331C87527F00E8A0E1 /* PokemonDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F4FA321C87527F00E8A0E1 /* PokemonDetailViewController.swift */; };
@@ -47,6 +48,7 @@
 
 /* Begin PBXFileReference section */
 		33EA0AB06E3B7BB73A1BDF78 /* Pods-Class01.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Class01.release.xcconfig"; path = "Pods/Target Support Files/Pods-Class01/Pods-Class01.release.xcconfig"; sourceTree = "<group>"; };
+		628BBD371C88BBBD00F393D4 /* TrainerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainerTests.swift; sourceTree = "<group>"; };
 		62AB89451C84E632002F7D84 /* LoginTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginTests.swift; sourceTree = "<group>"; };
 		62AB89471C84EE44002F7D84 /* BaseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
 		62F4FA321C87527F00E8A0E1 /* PokemonDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokemonDetailViewController.swift; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 				62FB560C1C84C66D00C65148 /* Class01Tests.swift */,
 				62FB560E1C84C66D00C65148 /* Info.plist */,
 				62AB89451C84E632002F7D84 /* LoginTests.swift */,
+				628BBD371C88BBBD00F393D4 /* TrainerTests.swift */,
 			);
 			path = Class01Tests;
 			sourceTree = "<group>";
@@ -441,6 +444,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				62FB560D1C84C66D00C65148 /* Class01Tests.swift in Sources */,
+				628BBD381C88BBBD00F393D4 /* TrainerTests.swift in Sources */,
 				62AB89461C84E632002F7D84 /* LoginTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

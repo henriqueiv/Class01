@@ -19,8 +19,6 @@ class LoginTests: XCTestCase {
     }
     
     func testLoginTrue() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
         let expectation = expectationWithDescription("Done")
         
         let user = "ash"
@@ -34,8 +32,6 @@ class LoginTests: XCTestCase {
     }
     
     func testLoginFalse() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
         let expectation = expectationWithDescription("Done")
         
         let user = "ash222"

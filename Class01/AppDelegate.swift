@@ -14,7 +14,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        let environment = NSProcessInfo.processInfo().environment
+        if let testing = environment["isUITest"] where testing == "true" {
+            print("----------------------------")
+            print("ENVIRONMENT RUNNING UI TESTS")
+            print("----------------------------")
+        }
+        
         return true
     }
 
